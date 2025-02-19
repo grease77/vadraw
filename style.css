@@ -1,6 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    background: url("https://fs2.vacanza.tw/upload/ftp/ProductPic/v_2025pjparty/background.jpg") no-repeat center center fixed;
+    background-size: cover;
 }
 
 h1 {
@@ -9,28 +11,27 @@ h1 {
 
 .lottery-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-    margin-top: 50px;
+    grid-template-columns: repeat(8, 1fr); /* 確保每排 8 張 */
+    gap: 15px; /* 適當調整間距，讓它貼合背景數字 */
+    justify-content: center; /* 讓整體置中 */
+    width: 80%; /* 控制總寬度 */
+    margin: auto;
 }
 
 .lottery-item {
-    width: 100px;
-    height: 100px;
-    background-color: #007bff;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 120px;
+    height: 110px;
+    background: url("https://fs2.vacanza.tw/upload/ftp/ProductPic/v_2025pjparty/icon-O.png") no-repeat center center;
+    background-size: contain;
     cursor: pointer;
     border-radius: 8px;
-    font-size: 24px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-image 0.3s ease;
 }
 
 .lottery-item.clicked {
     transform: rotateY(180deg);
-    background-color: #28a745;
+    background-image: url("https://fs2.vacanza.tw/upload/ftp/ProductPic/v_2025pjparty/icon-X.png");
+    background-size: contain;  /* 保持圖片完整顯示 */
 }
 
 .modal {
