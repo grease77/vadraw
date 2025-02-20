@@ -34,8 +34,8 @@ body {
 /* 4) 卡牌：固定尺寸，不會跟背景圖一起縮放 */
 .lottery-item {
   position: absolute;
-  width: 150px;
-  height: 160px;
+  width: 120px;
+  height: 200px;
   background: url("https://fs2.vacanza.tw/upload/ftp/ProductPic/v_2025pjparty/icon-O.png") no-repeat center center;
   background-size: contain;
   cursor: pointer;
