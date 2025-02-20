@@ -11,50 +11,35 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>抽獎遊戲</title>
+  <!-- 連結外部 CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="lottery-container">
-    <div class="lottery-item" data-id="1"></div>
-        <div class="lottery-item" data-id="2"></div>
-        <div class="lottery-item" data-id="3"></div>
-        <div class="lottery-item" data-id="4"></div>
-        <div class="lottery-item" data-id="5"></div>
-        <div class="lottery-item" data-id="6"></div>
-        <div class="lottery-item" data-id="7"></div>
-        <div class="lottery-item" data-id="8"></div>
-        <div class="lottery-item" data-id="9"></div>
-        <div class="lottery-item" data-id="10"></div>
-        <div class="lottery-item" data-id="11"></div>
-        <div class="lottery-item" data-id="12"></div>
-        <div class="lottery-item" data-id="13"></div>
-        <div class="lottery-item" data-id="14"></div>
-        <div class="lottery-item" data-id="15"></div>
-        <div class="lottery-item" data-id="16"></div>
-        <div class="lottery-item" data-id="17"></div>
-        <div class="lottery-item" data-id="18"></div>
-        <div class="lottery-item" data-id="19"></div>
-        <div class="lottery-item" data-id="20"></div>
-        <div class="lottery-item" data-id="21"></div>
-        <div class="lottery-item" data-id="22"></div>
-        <div class="lottery-item" data-id="23"></div>
-        <div class="lottery-item" data-id="24"></div>
-</div>
+  <!-- (A) 放背景圖與卡牌的容器 -->
+  <div class="lottery-container">
+    <img
+      src="https://fs2.vacanza.tw/upload/ftp/ProductPic/v_2025pjparty/background.jpg"
+      alt="背景圖"
+      class="lottery-background"
+    />
+    <!-- JS 會自動生成 24 張卡牌 -->
+  </div>
 
-    <!-- 獎品顯示區域 -->
-    <div id="prize-modal" class="modal">
-        <div class="modal-content">
-            <h2>獎品名稱</h2>
-            <img id="prize-image" src="" alt="獎品圖片">
-            <p id="prize-description"></p>
-            <button onclick="closeModal()">關閉</button>
-        </div>
+  <!-- (B) 獎品顯示區域（Modal） -->
+  <div id="prize-modal" class="modal">
+    <div class="modal-content">
+      <h2>獎品名稱</h2>
+      <img id="prize-image" src="" alt="獎品圖片">
+      <p id="prize-description"></p>
+      <button onclick="closeModal()">關閉</button>
     </div>
+  </div>
 
-    <script src="script.js"></script>
+  <!-- (C) 連結外部 JS -->
+  <script src="script.js"></script>
 </body>
 </html>
 <!-- partial -->
