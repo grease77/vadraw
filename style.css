@@ -110,12 +110,12 @@ body {
 }
 .heart-text {
   position: absolute;
-  top: 100px;    /* 根據愛心的位置做微調 */
+  top: 105px;    /* 根據愛心的位置做微調 */
   right: 63px;  /* 根據愛心的位置做微調 */
   font-size: 1.4rem;
   font-weight: bold;
   color: white;
-  line-height: 1.1;
+  line-height: 1;
   white-space: normal; /* 允許文字換行 */
   width: 32px;
 }
