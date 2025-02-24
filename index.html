@@ -29,21 +29,23 @@
   </div>
 
   <!-- (B) 獎品顯示區域（Modal） -->
-  <div id="prize-modal" class="modal">
+<div id="prize-modal" class="modal">
   <div class="modal-content">
-     <!-- 愛心文字 -->
-    <div class="heart-text" id="heart-text">預設文字</div>
-    <!-- 獎品圖片：置於上方 -->
-    <img id="prize-image" src="" alt="獎品圖片">
-    <!-- 文字與按鈕區塊：置於下方粉色區域 -->
+    <!-- 內層白色區域，填滿框架中間透明區，但放在最底層 -->
+    <div class="inner-white"></div>
+
+    <!-- 獎品圖片與說明，放在白色區域上方（可根據需要微調位置與層級） -->
+    <img id="prize-image" class="prize-image" src="" alt="獎品圖片">
     <div class="modal-details">
-      <h2 id="prize-name">獎品名稱</h2>
-      <p id="prize-description">獎品描述</p>
+      <h2 id="prize-name">IPHONE 16 PRO MAX</h2>
+      <p id="prize-description">256G (價值44,900)</p>
       <button onclick="closeModal()">關閉</button>
     </div>
+
+    <!-- 愛心文字，綁定在背景（框架）上，位於右上角 -->
+    <div class="heart-text" id="heart-text">預設文字</div>
   </div>
 </div>
-
 
   <!-- (C) 連結外部 JS -->
   <script src="script.js"></script>

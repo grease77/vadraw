@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
   background: black; /* 預設背景黑，讓圖片四周可留黑邊 */
   overflow: hidden;  /* 不出現捲軸 */
 }
@@ -61,12 +61,10 @@ body {
 }
 
 .modal-content {
-  /* 關鍵：使用相對定位 + aspect-ratio，讓框架維持等比縮放 */
   position: relative;
-  width: 90%;             /* 彈窗佔螢幕寬度 90% */
-  max-width: 550px;       /* 彈窗最大寬度 550px，可自行調整 */
-  aspect-ratio: 1 / 1;    /* 若你的框架圖是正方形，填 1/1；如非正方形，請改成實際寬高比 */
-  
+  width: 90%;  
+  max-width: 550px;       
+  aspect-ratio: 1 / 1; 
   /* 背景圖：粉色框架 */
   background-image: url("https://fs2.vacanza.tw/upload/ftp/ProductPic/v_2025pjparty/window.png");
   background-size: contain;  /* 等比縮放顯示整張框架圖 */
@@ -76,10 +74,19 @@ body {
   /* 其他外觀設定 */
   border-radius: 10px;
   text-align: center;
-  background-color: transparent;
-  /* padding: 30px; <-- 若想讓文字更貼合框架，可移除或調整這個內距 */
+  padding: 30px;
 }
-
+.inner-white {
+  position: absolute;
+  z-index: -2;
+  top: 15%;      /* 根據需要微調 */
+  left: 5%;     /* 根據需要微調 */
+  width: 90%;    /* 調整比例 */
+  height: 80%;   /* 調整比例 */
+  background-color: white;
+  border-radius: 5px;  /* 可選，看你喜不喜歡圓角 */
+  overflow: hidden;    /* 如有需要隱藏內部溢出 */
+}
 /* 文字區域：使用絕對定位 + 百分比，確保縮放時維持相對位置 */
 .modal-details {
   position: absolute;
@@ -88,7 +95,7 @@ body {
   transform: translateX(-50%);
   width: 80%;            /* 文字區塊寬度 */
   text-align: center;
-  z-index: 3;            /* 高於背景與圖片 */
+  z-index: 5;            /* 高於背景與圖片 */
 }
 
 /* 獎品圖片：若要在框架下方，可設 z-index: -1 */
@@ -98,7 +105,7 @@ body {
   top: 49%;              /* 置中顯示 */
   left: 48.5%;
   transform: translate(-50%, -50%);
-  width: 90%;            /* 圖片佔框架 80% 寬，可自行調整 */
+  width: 80%;            /* 圖片佔框架 80% 寬，可自行調整 */
   height: auto;
 }
 .heart-text {
@@ -108,7 +115,31 @@ body {
   font-size: 1.4rem;
   font-weight: bold;
   color: white;
-  text-shadow: 1px 1px 2px #fff;  /* 若需要字體陰影 */
   white-space: normal; /* 允許文字換行 */
   width: 32px;
+}
+
+@font-face {
+  font-family: "PingFangTC-Semibold";
+  src: url("fonts/PingFangTC-Semibold.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PingFangTC-Regular";
+  src: url("fonts/PingFangTC-Regular") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+#prize-name {
+  font-family: "PingFangTC-Semibold", sans-serif;
+  /* 其他字體屬性，如字重、字大小等 */
+}
+#prize-description {
+  font-family: "PingFangTC-Regular", sans-serif;
+}
+.heart-text {
+  font-family: "PingFangTC-Semibold", sans-serif;
 }
