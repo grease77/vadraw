@@ -35,7 +35,7 @@ body {
 .lottery-item {
   position: absolute;
   width: 137px;
-  height: 205px;
+  height: 225px;
   background: url("https://fs2.vacanza.tw/upload/ftp/ProductPic/v_2025pjparty/icon-O.png") no-repeat center center;
   background-size: contain;
   cursor: pointer;
