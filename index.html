@@ -30,13 +30,20 @@
 
   <!-- (B) 獎品顯示區域（Modal） -->
   <div id="prize-modal" class="modal">
-    <div class="modal-content">
-      <h2>獎品名稱</h2>
-      <img id="prize-image" src="" alt="獎品圖片">
-      <p id="prize-description"></p>
+  <div class="modal-content">
+     <!-- 愛心文字 -->
+    <div class="heart-text" id="heart-text">預設文字</div>
+    <!-- 獎品圖片：置於上方 -->
+    <img id="prize-image" src="" alt="獎品圖片">
+    <!-- 文字與按鈕區塊：置於下方粉色區域 -->
+    <div class="modal-details">
+      <h2 id="prize-name">獎品名稱</h2>
+      <p id="prize-description">獎品描述</p>
       <button onclick="closeModal()">關閉</button>
     </div>
   </div>
+</div>
+
 
   <!-- (C) 連結外部 JS -->
   <script src="script.js"></script>

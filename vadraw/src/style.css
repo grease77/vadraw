@@ -34,8 +34,8 @@ body {
 /* 4) 卡牌：固定尺寸，不會跟背景圖一起縮放 */
 .lottery-item {
   position: absolute;
-  width: 120px;
-  height: 180px;
+  width: 137px;
+  height: 205px;
   background: url("https://fs2.vacanza.tw/upload/ftp/ProductPic/v_2025pjparty/icon-O.png") no-repeat center center;
   background-size: contain;
   cursor: pointer;
@@ -59,15 +59,56 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .modal-content {
-  background-color: white;
-  padding: 30px;
+  /* 關鍵：使用相對定位 + aspect-ratio，讓框架維持等比縮放 */
+  position: relative;
+  width: 90%;             /* 彈窗佔螢幕寬度 90% */
+  max-width: 550px;       /* 彈窗最大寬度 550px，可自行調整 */
+  aspect-ratio: 1 / 1;    /* 若你的框架圖是正方形，填 1/1；如非正方形，請改成實際寬高比 */
+  
+  /* 背景圖：粉色框架 */
+  background-image: url("https://fs2.vacanza.tw/upload/ftp/ProductPic/v_2025pjparty/window.png");
+  background-size: contain;  /* 等比縮放顯示整張框架圖 */
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* 其他外觀設定 */
   border-radius: 10px;
   text-align: center;
-  max-width: 500px;
-  width: 80%;
+  background-color: transparent;
+  /* padding: 30px; <-- 若想讓文字更貼合框架，可移除或調整這個內距 */
 }
+
+/* 文字區域：使用絕對定位 + 百分比，確保縮放時維持相對位置 */
+.modal-details {
+  position: absolute;
+  bottom: 4%;           /* 往上/下微調，使文字落在粉色區域 */
+  left: 50%;             /* 置中對齊 */
+  transform: translateX(-50%);
+  width: 80%;            /* 文字區塊寬度 */
+  text-align: center;
+  z-index: 3;            /* 高於背景與圖片 */
+}
+
+/* 獎品圖片：若要在框架下方，可設 z-index: -1 */
 #prize-image {
-  width: 200px;
+  position: absolute;
+  z-index: -1;           /* 讓圖片被粉色框架覆蓋 */
+  top: 49%;              /* 置中顯示 */
+  left: 48.5%;
+  transform: translate(-50%, -50%);
+  width: 90%;            /* 圖片佔框架 80% 寬，可自行調整 */
   height: auto;
+}
+.heart-text {
+  position: absolute;
+  top: 100px;    /* 根據愛心的位置做微調 */
+  right: 63px;  /* 根據愛心的位置做微調 */
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px #fff;  /* 若需要字體陰影 */
+  white-space: normal; /* 允許文字換行 */
+  width: 32px;
 }
