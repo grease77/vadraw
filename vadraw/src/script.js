@@ -23,11 +23,21 @@ const prizes = [
   { id: 22, name: "獎品二十二", description: "這是獎品二十二的描述", image: "https://example.com/image22.jpg", heartText: "H22" },
   { id: 23, name: "獎品二十三", description: "這是獎品二十三的描述", image: "https://example.com/image23.jpg", heartText: "H23" },
   { id: 24, name: "獎品二十四", description: "這是獎品二十四的描述", image: "https://example.com/image24.jpg", heartText: "24獎" },
+  { id: 25, name: "獎品二十五", description: "這是獎品二十五的描述", image: "https://example.com/image24.jpg", heartText: "25獎" },
+  { id: 26, name: "獎品二十六", description: "這是獎品二十六的描述", image: "https://example.com/image24.jpg", heartText: "26獎" },
+  { id: 27, name: "獎品二十七", description: "這是獎品二十七的描述", image: "https://example.com/image24.jpg", heartText: "27獎" },
+  { id: 28, name: "獎品二十八", description: "這是獎品二十八的描述", image: "https://example.com/image24.jpg", heartText: "28獎" },
+  { id: 29, name: "獎品二十九", description: "這是獎品二十九的描述", image: "https://example.com/image24.jpg", heartText: "29獎" },
+  { id: 30, name: "獎品三十", description: "這是獎品三十的描述", image: "https://example.com/image24.jpg", heartText: "30獎" },
+  { id: 31, name: "獎品三十一", description: "這是獎品三十一的描述", image: "https://example.com/image24.jpg", heartText: "31獎" },
+  { id: 32, name: "獎品三十二", description: "這是獎品三十二的描述", image: "https://example.com/image24.jpg", heartText: "32獎" },
+  { id: 33, name: "獎品三十三", description: "這是獎品三十三的描述", image: "https://example.com/image24.jpg", heartText: "33獎" },
+  { id: 34, name: "獎品三十四", description: "這是獎品三十四的描述", image: "https://example.com/image24.jpg", heartText: "34獎" },
 ];
 
 // (B) 生成 24 張卡牌
 const container = document.querySelector('.lottery-container');
-for (let i = 1; i <= 24; i++) {
+for (let i = 1; i <= 34; i++) {
   const item = document.createElement('div');
   item.classList.add('lottery-item');
   item.dataset.id = i;
@@ -36,30 +46,40 @@ for (let i = 1; i <= 24; i++) {
 
 // (C) 卡牌在背景圖上對應的位置 (以百分比表示，請根據背景圖實際位置微調)
 const cardPositions = [
-  { top: 0.205, left: 0.14 },
-  { top: 0.205, left: 0.225 },
-  { top: 0.205, left: 0.309 },
-  { top: 0.205, left: 0.394 },
-  { top: 0.205, left: 0.477 },
-  { top: 0.205, left: 0.561 },
-  { top: 0.205, left: 0.645 },
-  { top: 0.205, left: 0.73 },
-  { top: 0.445, left: 0.14 },
-  { top: 0.445, left: 0.225 },
-  { top: 0.445, left: 0.309 },
-  { top: 0.445, left: 0.394 },
-  { top: 0.445, left: 0.477 },
-  { top: 0.445, left: 0.561 },
-  { top: 0.445, left: 0.645 },
-  { top: 0.445, left: 0.73 },
-  { top: 0.682, left: 0.14 },
-  { top: 0.682, left: 0.225 },
-  { top: 0.682, left: 0.309 },
-  { top: 0.682, left: 0.394 },
-  { top: 0.682, left: 0.477 },
-  { top: 0.682, left: 0.561 },
-  { top: 0.682, left: 0.645 },
-  { top: 0.682, left: 0.73 },
+  { top: 0.205, left: 0.02 },
+  { top: 0.205, left: 0.1 },
+  { top: 0.205, left: 0.18 },
+  { top: 0.205, left: 0.26 },
+  { top: 0.205, left: 0.34},
+  { top: 0.205, left: 0.42 },
+  { top: 0.205, left: 0.5 },
+  { top: 0.205, left: 0.58 },
+  { top: 0.205, left: 0.66 },
+  { top: 0.205, left: 0.74 },
+  { top: 0.205, left: 0.82 },
+  { top: 0.205, left: 0.9 },
+  { top: 0.445, left: 0.02 },
+  { top: 0.445, left: 0.1 },
+  { top: 0.445, left: 0.18 },
+  { top: 0.445, left: 0.26 },
+  { top: 0.445, left: 0.34 },
+  { top: 0.445, left: 0.42 },
+  { top: 0.445, left: 0.5 },
+  { top: 0.445, left: 0.58 },
+  { top: 0.445, left: 0.66 },
+  { top: 0.445, left: 0.74 },
+  { top: 0.445, left: 0.82 },
+  { top: 0.445, left: 0.9 },
+  { top: 0.682, left: 0.1 },
+  { top: 0.682, left: 0.18 },
+  { top: 0.682, left: 0.26 },
+  { top: 0.682, left: 0.34 },
+  { top: 0.682, left: 0.42 },
+  { top: 0.682, left: 0.5 },
+  { top: 0.682, left: 0.58 },
+  { top: 0.682, left: 0.66 },
+  { top: 0.682, left: 0.74 },
+  { top: 0.682, left: 0.82 },
 ];
 
 // (D) 動態計算並定位卡牌的位置
