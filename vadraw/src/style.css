@@ -1,4 +1,3 @@
-/* 1) 全局重置 */
 * {
   margin: 0;
   padding: 0;
@@ -7,55 +6,45 @@
 
 body {
   font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
-  background: black; /* 預設背景黑，讓圖片四周可留黑邊 */
-  overflow: hidden;  /* 不出現捲軸 */
+  background: black; 
+  overflow: hidden;
 }
-
-/* 2) 容器：佔滿畫面，裡面放背景圖與卡牌 */
 .lottery-container {
   position: relative;
   width: 100vw;
   height: 100vh;
 }
-
-/* 3) 背景圖：維持原比例，垂直方向填滿，寬度自動 */
 .lottery-background {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 100%;       /* 以高度撐滿視窗 */
-  width: auto;        /* 寬度自動計算 */
-  max-width: 100vw;   /* 不要超過視窗寬度 */
-  object-fit: contain;/* 等比縮放，完整顯示圖片 */
+  height: 100%;       
+  width: auto;        
+  max-width: 100vw;   
+  object-fit: contain;
   display: block;
 }
-
-/* 4) 卡牌：固定尺寸，不會跟背景圖一起縮放 */
 .lottery-item {
   position: absolute;
   width: 100px;
-  height: 220px;
+  height: 210px;
   background: url("https://fs2.vacanza.tw/upload/ftp/ProductPic/v_2025pjparty/icon-O.png") no-repeat center center;
   background-size: contain;
   cursor: pointer;
   transition: transform 0.3s ease, background-image 0.3s ease;
 }
-
-/* 點擊後翻轉效果：換圖 & 旋轉 */
 .lottery-item.clicked {
   transform: rotateY(180deg);
   background-image: url("https://fs2.vacanza.tw/upload/ftp/ProductPic/v_2025pjparty/icon-X.png");
   background-size: contain;
 }
-
-/* 5) Modal 彈窗 */
 .modal {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
   background: rgba(0,0,0,0.7);
-  display: none; /* 預設隱藏 */
+  display: none; 
   justify-content: center;
   align-items: center;
 }
@@ -65,58 +54,57 @@ body {
   width: 90%;  
   max-width: 550px;       
   aspect-ratio: 1 / 1; 
-  /* 背景圖：粉色框架 */
   background-image: url("https://fs2.vacanza.tw/upload/ftp/ProductPic/v_2025pjparty/window.png");
-  background-size: contain;  /* 等比縮放顯示整張框架圖 */
+  background-size: contain; 
   background-repeat: no-repeat;
   background-position: center;
-
-  /* 其他外觀設定 */
   border-radius: 10px;
   text-align: center;
   padding: 30px;
+  overflow: hidden;
 }
 .inner-white {
   position: absolute;
   z-index: -2;
-  top: 15%;      /* 根據需要微調 */
-  left: 5%;     /* 根據需要微調 */
-  width: 90%;    /* 調整比例 */
-  height: 80%;   /* 調整比例 */
+  top: 15%;      
+  left: 5%;     
+  width: 90%;   
+  height: 80%;  
   background-color: white;
-  border-radius: 5px;  /* 可選，看你喜不喜歡圓角 */
-  overflow: hidden;    /* 如有需要隱藏內部溢出 */
-}
-/* 文字區域：使用絕對定位 + 百分比，確保縮放時維持相對位置 */
-.modal-details {
-  position: absolute;
-  bottom: 4%;           /* 往上/下微調，使文字落在粉色區域 */
-  left: 50%;             /* 置中對齊 */
-  transform: translateX(-50%);
-  width: 80%;            /* 文字區塊寬度 */
-  text-align: center;
-  z-index: 5;            /* 高於背景與圖片 */
+  border-radius: 5px;  
+  overflow: hidden;    
 }
 
-/* 獎品圖片：若要在框架下方，可設 z-index: -1 */
+.modal-details {
+  position: absolute;
+  bottom: 4%;           
+  left: 50%;            
+  transform: translateX(-50%);
+  width: 80%;            
+  text-align: center;
+  z-index: 5;            
+}
+
+
 #prize-image {
   position: absolute;
-  z-index: -1;           /* 讓圖片被粉色框架覆蓋 */
-  top: 50%;              /* 置中顯示 */
+  z-index: -1;           
+  top: 50%;              
   left: 48.5%;
   transform: translate(-50%, -50%);
-  width: 80%;            /* 圖片佔框架 80% 寬，可自行調整 */
+  width: 80%;           
   height: auto;
 }
+
 .heart-text {
   position: absolute;
-  top: 105px;    /* 根據愛心的位置做微調 */
-  right: 63px;  /* 根據愛心的位置做微調 */
+  top: 105px;    
+  right: 63px;  
   font-size: 1.4rem;
   font-weight: bold;
   color: white;
   line-height: 1;
-  white-space: normal; /* 允許文字換行 */
+  white-space: normal;
   width: 32px;
 }
 
@@ -136,7 +124,6 @@ body {
 
 #prize-name {
   font-family: "PingFangTC-Semibold", sans-serif;
-  /* 其他字體屬性，如字重、字大小等 */
 }
 #prize-description {
   font-family: "PingFangTC-Regular", sans-serif;
